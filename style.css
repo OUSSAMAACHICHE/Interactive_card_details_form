@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+:root {
+	--White: hsl(0, 0%, 100%);
+	--Lightgrayishviolet: hsl(270, 3%, 87%);
+	--Darkgrayishviolet: hsl(279, 6%, 55%);
+	--Verydarkviolet: hsl(278, 68%, 11%);
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 18px;
+}
+
+body {
+	font-family: 'Space Grotesk', sans-serif;
+	font-size: 1rem;
+}
+
+img {
+	display: block;
+}
+
+
+
+/* Section cards  */
+.cards {
+	width: 100%;
+	position: relative;
+}
+
+.cards picture img {
+	width: 100%;
+	display: block;
+	height: 250px;
+}
+
+.back-card {
+	background-image: url(images/bg-card-back.png);
+	width: 300px;
+	height: 175px;
+	border-radius: 10px;
+	position: absolute;
+	top: 30px;
+	right: 10px;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.back-card span {
+	position: absolute;
+	top: 40%;
+	right: 15%;
+	color: var(--White);
+	font-size: 0.8rem;
+}
+
+.front-card {
+	background-image: url(images/bg-card-front.png);
+	width: 300px;
+	height: 175px;
+	border-radius: 10px;
+	position: absolute;
+	top: 120px;
+	left: 20px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	padding: 20px;
+}
+
+.front-card img {
+	width: 60px;
+}
+
+.front-card .nums {
+	margin-top: 30px;
+	color: var(--Lightgrayishviolet);
+	font-weight: normal;
+	letter-spacing: 2px;
+	display: block;
+}
+
+.card_info {
+	display: flex;
+	justify-content: space-between;
+	font-size: 0.7rem;
+	margin-top: 10px;
+	color: var(--Lightgrayishviolet);
+}
+
+/* End section cards  */
+/*Start Form */
+.form {
+	margin-top: 70px;
+	padding: 0 20px;
+}
+
+.form label {
+	display: block;
+	margin-bottom: 5px;
+	text-transform: uppercase;
+	color: var(--Verydarkviolet);
+	letter-spacing: 2px;
+	margin-top: 20px;
+	font-size: 0.8rem;
+}
+
+.form input {
+	display: block;
+	width: 100%;
+	padding: 15px;
+	border-radius: 10px;
+	border: 1px solid var(--Lightgrayishviolet);
+}
+.form input:focus {
+	outline: none;
+}
+
+/* remove arrows of input type number  */
+.form input::-webkit-inner-spin-button {
+	appearance: none;
+}
+
+.form input::placeholder {
+	color: var(--Lightgrayishviolet);
+	font-size: 1.1rem;
+	font-family: inherit;
+}
+
+.form .date {
+	margin: 20px 0;
+}
+
+.form .date span {
+	font-size: 0.8rem;
+	display: inline-block;
+	text-transform: uppercase;
+	color: var(--Verydarkviolet);
+	letter-spacing: 2px;
+}
+
+.form .date span:nth-child(2) {
+	margin-left: 15px;
+}
+
+.form .date .date-fields {
+	display: flex;
+	gap: 10px;
+	margin-top: 5px;
+	position: relative;
+
+}
+
+.form .date .date-fields input {
+	width: calc(70% / 3);
+}
+.form .date .date-fields span {
+	position: absolute;
+	font-size: 0.5rem;
+	bottom: -15px;
+	left: 0px;
+	letter-spacing: 1px;
+	color:  hsl(0, 100%, 66%);
+}
+.form .date .date-fields span:nth-child(2) {
+	left: 23%;
+}
+.form .date .date-fields span:nth-child(4) {
+	left: 54%;
+}
+.form .date .date-fields input:nth-child(4) {
+	flex-grow: 1;
+}
+
+.form .submit {
+	background-color: var(--Verydarkviolet);
+	color: var(--White);
+	font-family: inherit;
+	font-size: 1.1rem;
+	cursor: pointer;
+}
+.form .submit.disabled {
+	pointer-events: none;
+	cursor: not-allowed;
+	opacity: 0.5;
+}
+.wrong-text {
+	color: hsl(0, 100%, 66%);
+	font-size: 0.8rem;
+	text-transform: uppercase;
+}
+#card_name.wrong {
+	border: 2px solid  hsl(0, 100%, 66%);
+}
+#card_number.wrong {
+	border: 2px solid  hsl(0, 100%, 66%);
+}
+#mm.wrong {
+	border: 2px solid  hsl(0, 100%, 66%);
+}
+#yy.wrong {
+	border: 2px solid  hsl(0, 100%, 66%);
+}
+#cvc.wrong {
+	border: 2px solid  hsl(0, 100%, 66%);
+}
+/*End Form */
+
+.attribution {
+	font-size: 11px;
+	position: fixed;
+	bottom: 10px;
+}
+
+.attribution a {
+	color: hsl(228, 45%, 44%);
+	font-weight: bold;
+}
+
+@media (min-width: 980px) {
+	main {
+		min-height: 100vh;
+		display: flex;
+		align-items: center;
+		position: relative;
+		justify-content: space-around;
+	}
+
+	.cards {
+		height: 100vh;
+		width: 370px;
+		position: absolute;
+		left: 0;
+	}
+
+	.cards picture img {
+		height: 100%;
+	}
+
+	.back-card {
+		top: 420px;
+		left: 220px;
+	}
+
+	.front-card {
+		top: 200px;
+		left: 160px;
+	}
+
+	.form {
+		position: absolute;
+		right: 350px;
+		max-width: 450px;
+		margin: 0;
+	}
+}
+@media (min-width: 980px) and (max-width: 1400px) {
+	.form {
+		right: 70px;
+	}
+}
+
+/* THank section S */
+.thank {
+	text-align: center;
+	margin-top: 130px;
+	display: none;
+}
+.thank img  {
+	width: 80px;
+	margin: auto;
+	margin-bottom: 30px;
+}
+.thank .thank_you {
+	font-size: 1.7rem;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	color: var(--Verydarkviolet);
+}
+.thank p {
+	color: var(--Darkgrayishviolet);
+	margin: 10px 0 40px;
+}
+.thank button {
+	width: calc(100% - 50px);
+	padding: 10px;
+	border-radius: 10px;
+	background-color: var(--Verydarkviolet);
+	color: var(--White);
+	font-family: inherit;
+	font-size: 1.1rem;
+	cursor: pointer;
+}
+
+@media (min-width: 980px) {
+	.thank {
+		margin: 0;
+		margin-left: 350px;
+		width: 400px;
+	}
+	.thank button {
+		width: 100%;
+	}
+}
