@@ -135,6 +135,9 @@ img {
 .form .date {
 	margin: 20px 0;
 }
+.form input:focus {
+	border: 1px solid var(--Verydarkviolet);
+}
 
 .form .date span {
 	font-size: 0.8rem;
@@ -158,6 +161,10 @@ img {
 
 .form .date .date-fields input {
 	width: calc(70% / 3);
+}
+
+#cvc {
+	flex: 1;
 }
 .form .date .date-fields span {
 	position: absolute;
